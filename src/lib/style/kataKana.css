@@ -1,0 +1,114 @@
+
+.katakana-page {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.katakana-grid {
+    display: grid;
+    grid-template-columns: 60px repeat(5, 1fr);
+    gap: 0.5rem;
+}
+
+.corner {
+    height: 40px;
+}
+
+.header {
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.row-label {
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.cell {
+    border: 1px solid var(--border);
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    background: rgba(255, 255, 255, 0.02);
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    transition:
+            transform 0.15s ease,
+            box-shadow 0.15s ease;
+}
+
+/* Hover / focus pop */
+.cell:hover,
+.cell:focus-visible {
+    transform: translateY(-3px) scale(1.06);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Rainbow border only */
+.cell::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 4px;
+    background: linear-gradient(
+            90deg,
+            #ff0000,
+            #ff7f00,
+            #ffff00,
+            #00ff00,
+            #00ffff,
+            #0000ff,
+            #8b00ff,
+            #ff0000
+    );
+    background-size: 300% 300%;
+    opacity: 0;
+    pointer-events: none;
+    animation: rainbow 3s linear infinite;
+    mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+    -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    padding: 2px;
+}
+
+/* Show border on hover / focus */
+.cell:hover::after,
+.cell:focus-visible::after {
+    opacity: 1;
+}
+
+/* Animation */
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 300% 50%;
+    }
+}
+
+.span {
+    grid-column: span 5;
+}
