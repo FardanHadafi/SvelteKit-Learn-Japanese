@@ -64,7 +64,6 @@
 
 		<div class="hero-actions">
 			<a href="/sign-up" class="primary">Start Learning</a>
-			<a href="/sign-in">I Have an Account</a>
 		</div>
 	</div>
 </section>

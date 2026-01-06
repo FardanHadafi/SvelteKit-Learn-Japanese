@@ -6,6 +6,7 @@
 		<a href="/hiragana">Hiragana</a>
 		<a href="/katakana">Katakana</a>
 		<a href="/kanji">Kanji</a>
+		<a href="/vocabulary">Vocabulary</a>
 	</div>
 
 	<div class="nav-actions">

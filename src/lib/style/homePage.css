@@ -2,6 +2,8 @@
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
+	max-width: 100vw;
+	overflow-x: hidden;
 }
 
 .navbar {
@@ -75,8 +77,8 @@
 	text-align: center;
 	padding: 3rem 2rem;
 	position: relative;
-	overflow: hidden;
 	isolation: isolate;
+	overflow: clip;
 }
 
 .hero-content {
@@ -88,9 +90,10 @@
 /* Background layer */
 .hero-bg {
 	position: absolute;
-	inset: 0;
+	inset: -160px;
 	z-index: 0;
 	pointer-events: none;
+	overflow: visible;
 }
 
 /* Floating characters */
@@ -149,6 +152,8 @@ footer {
 	font-size: 0.8rem;
 	color: var(--muted);
 	background: transparent;
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
 	position: relative;
 	z-index: 2;
 }
