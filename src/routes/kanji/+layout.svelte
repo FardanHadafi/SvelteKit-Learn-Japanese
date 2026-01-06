@@ -1,13 +1,20 @@
-<script lang="ts">
-import Katakana from '$lib/components/ui/Katakana.svelte';
-import "$lib/style/kataKana.css"
+<script>
+	import favicon from '$lib/assets/favicon.svg';
+	import "../../lib/style/N5.css"
+	import "../../lib/style/N4.css"
+	let { children } = $props();
 </script>
+
+<svelte:head>
+	<link rel="icon" href={favicon} />
+</svelte:head>
 
 <nav class="navbar">
 	<div class="nav-links">
 		<a href="/">Home</a>
-		<a href="/hiragana">Hiragana</a>
 		<a href="/kanji">Kanji</a>
+		<a href="/kanji/n5">N5</a>
+		<a href="/kanji/n4">N4</a>
 	</div>
 </nav>
 
@@ -50,4 +57,4 @@ import "$lib/style/kataKana.css"
     }
 </style>
 
-<Katakana />
+{@render children()}
