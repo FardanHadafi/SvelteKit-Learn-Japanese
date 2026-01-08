@@ -1,12 +1,12 @@
-export type ServerFetch = typeof globalThis.fetch;
-import {API_URL} from '$env/static/private';
+import { betterAuth } from 'better-auth';
 
-export async function getUser(fetch: ServerFetch) {
-	const res = await fetch(`${API_URL}/me`, {
-		credentials: 'include'
-	});
-	if (!res.ok) {
-		return null;
+export const auth = betterAuth({
+	baseURL: 'http://localhost:5173', // ✅ hardcode for now (safe)
+
+	cookies: {
+		sessionToken: {
+			path: '/',
+			sameSite: 'lax'
+		}
 	}
-	return await res.json();
-}
+});

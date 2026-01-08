@@ -47,13 +47,25 @@ body {
 }
 
 .auth-card h1 {
-	margin: 0 0 0.5rem;
+	text-align: center;
+	margin: 0 0 1.5rem;
 	font-size: 1.5rem;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
 }
 
-.auth-card p {
+ .auth-home  {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 0.5rem;
+}
+
+ .auth-home a {
+	 color: var(--accent);
+	 text-decoration: none;
+ }
+
+.auth-card p a {
 	margin: 0 0 1.5rem;
 	color: var(--muted);
 	font-size: 0.9rem;
@@ -108,6 +120,8 @@ button:hover {
 }
 
 .auth-footer {
+	display: flex;
+	justify-content: space-between;
 	margin-top: 1.2rem;
 	text-align: center;
 	font-size: 0.85rem;

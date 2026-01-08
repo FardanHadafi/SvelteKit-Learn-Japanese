@@ -1,7 +1,11 @@
 <div class="auth-wrapper">
 	<div class="auth-card">
 		<h1>Sign Up</h1>
+
+		<div class="auth-home">
 		<p>Create your account</p>
+		<a href="/">Home</a>
+		</div>
 
 		<form method="POST">
 			<div class="field">

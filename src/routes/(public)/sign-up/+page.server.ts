@@ -13,7 +13,7 @@ export const actions = {
 			return fail(400, { error: 'All fields are required' });
 		}
 
-		const res = await apiFetch(fetch, '/auth/sign-up/email', {
+		const res = await apiFetch(fetch, '/api/auth/sign-up/email', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -23,6 +23,7 @@ export const actions = {
 
 		if (!res.ok) {
 			const data = await res.json();
+			console.log(data);
 			return fail(400, { error: data.error ?? 'Signup failed' });
 		}
 
